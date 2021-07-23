@@ -23,8 +23,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func updateUIAfterGuess() {
+        guessedLetterField.text = ""
+        guessedLetterField.resignFirstResponder()
+        guessLetterButton.isEnabled = false
 
+    }
+    
+    @IBAction func guessedLetterFieldChanged(_ sender: UITextField) {
+        guessLetterButton.isEnabled = !(guessedLetterField.text!.isEmpty)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UITextField) {
+        updateUIAfterGuess()
+    }
+    
     @IBAction func guessLetterButtonPressed(_ sender: UIButton) {
+        updateUIAfterGuess()
     }
     
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {

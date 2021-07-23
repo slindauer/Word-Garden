@@ -85,8 +85,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-f7-Q81">
-                                <rect key="frame" x="132" y="160" width="130" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-f7-Q81">
+                                <rect key="frame" x="128" y="160" width="138" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v44-hc-P1d">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
@@ -95,10 +95,14 @@
                                             <constraint firstAttribute="height" constant="34" id="FA8-Ww-OUa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="snx-yl-FLQ"/>
+                                            <action selector="guessedLetterFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="fky-E7-rAW"/>
+                                        </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-sr-Wjq">
-                                        <rect key="frame" x="30" y="0.0" width="100" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-sr-Wjq">
+                                        <rect key="frame" x="38" y="0.0" width="100" height="34"/>
                                         <state key="normal" title="Guess a Letter"/>
                                         <connections>
                                             <action selector="guessLetterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Wq-u6-J31"/>
